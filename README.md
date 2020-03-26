@@ -118,7 +118,7 @@ Sample Data | 740BD5BE61840BE4FE3905CC3EBE3E7E | E48B185060FB0FF49BE6DA43E69E624
 I obtained the field names and the sample data by printing the first few rows of data in the dataset using the following code within the for loop:
 
 ``` python
-if n <= 5
+if n <= 5:
 	print(row)
 ```
 
