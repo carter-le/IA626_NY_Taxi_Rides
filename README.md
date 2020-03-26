@@ -2,7 +2,8 @@
  
 # NY Taxi Rides 
 
-#### Introduction 
+
+### Introduction 
 
 For this project I have analyzed a subset of a dataset of NYC Taxi Rides, which will be referred to in this document as the dataset. 
 
@@ -22,7 +23,8 @@ reader = csv.reader(f)
 
 
 
-#### How many rows are in the data set? 
+
+### How many rows are in the data set? 
 
 There are a total of 15,004,557 rows in the data set. This was determined by counting the number of rows using a simple counter (in this case n) using the following code:
 
@@ -43,7 +45,8 @@ is the method I use for this and all subsequent functions to iterate through the
 
 
 
-#### Time range data covers: 
+
+### Time range data covers: 
 
 It is important to filter this data such that we throw away any values which are not in the proper datetime format or which are impossible dates (ex. the 88th of March). We do this by creating a variable, dts, which is row[5] and row[6], the two datetime columns in the dataset. We then set another variable, fdt, to None type, and use the following code to test whether or not the date in any given row is in the correct datetime format:
 
@@ -96,9 +99,10 @@ Note: The try, except function does make this program slow. If this dataset was 
 
 
 
-#### Defining the Data: 
 
-###### This table gives the field names, SQL type, and sample data for each field in the dataset 
+### Defining the Data: 
+
+##### This table gives the field names, SQL type, and sample data for each field in the dataset 
 
 . | Medallion |  hack_license |  vendor_id |  rate_code |  store_and_fwd_flag |  pickup_datetime |  dropoff_datetime |  passenger_count |  trip_time_in_secs |  trip_distance |  pickup_longitude |  pickup_latitude |  dropoff_longitude |  dropoff_latitude
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
@@ -135,7 +139,7 @@ print(dictflag)
 
 The following were the results of the dictionary, confirming that store_and_fwd_flag is Boolean type:
 
-![Graph](/images/dictflag_results.JPG)
+![Graph](/images/dictflag_result.JPG)
 
 
 
@@ -143,9 +147,10 @@ It was by this method I clarified the SQL types I was unsure about.
 
 
 
-#### **Field Descriptions** 
 
-###### Includes the fields which have distinct values vs are unique (n/a)
+### **Field Descriptions** 
+
+##### Includes the fields which have distinct values vs are unique (n/a)
 
 **medallion:** Unique to each taxi – a cab must have a medallion to operate
 
@@ -189,7 +194,8 @@ It was by this method I clarified the SQL types I was unsure about.
 
 
 
-#### Maximum and minimum values of other numeric types:
+
+### Maximum and minimum values of other numeric types:
 
 Numeric Type | Min Value | Max Value 
 --- | --- | --- 
@@ -218,9 +224,9 @@ elif n > 1:
 
 
 
-#### What is the geographic range of the data?
+### What is the geographic range of the data?
 
-###### The data is filtered using the assumption that trips are constrained by the most northern, southern, eastern, and western points in the 48 states.  
+##### The data is filtered using the assumption that trips are constrained by the most northern, southern, eastern, and western points in the 48 states.  
 
 Here is the method by which I determined the most Northern, Southern, Eastern, and Western points in the dataset, constraining them to the most Northern, Southern, Eastern, and Western points in the 48 states. For reference, 49.38407 deg is the northern most point in the 48 states, and so on. The reason for the duplication is that there is a pickup latitude and a drop-off latitude, and both need to be accounted for both eastern and western - likewise with longitude for northern and southern. 
 
@@ -282,7 +288,7 @@ We note that this is a much larger geographic area than we would expect to see. 
 
 
 
-#### Average number of passengers each hour of the day.
+### Average number of passengers each hour of the day.
 
 The following code creates a dictionary which sums up the total number of passengers for each hour of the day. They keys in the dictionary are the hours in the day, from 00 to 23, and their corresponding values are the sum of the passenger count for each trip taken in that hour.
 
@@ -356,7 +362,8 @@ It is for this reason that I chose to average the passengers per hour by 31, the
 
 
 
-#### Creating a new CSV file which has only one out of every thousand rows of the main dataset. 
+
+### Creating a new CSV file which has only one out of every thousand rows of the main dataset. 
 
 The following code first reads the original data file. It then creates a brand new data file (first opening, writing blank, and closing the data file so as not to append to the data file each time the code is ran). It then sets the parameters for writing the new file, that the line terminators will be a new line and the delimiter within the line will be a comma. It then cycles through the data set with a for loop and writes every thousandth line, along with the first line where i = 0 to the new data file. 
 
@@ -381,7 +388,9 @@ The resulting file is small enough to actually open on my device, which could be
 ![Graph](/images/every_thousand_raw_data.JPG)
 
 
-#### Again finding the average number of passengers each hour of the day but using the reduced data set. 
+
+
+### Again finding the average number of passengers each hour of the day but using the reduced data set. 
 
 Because the task was to perform the exact same function with the smaller dataset as previously done on the large dataset, I simply changed the file the whole code was referencing from 'trip_data_10.csv' to 'every_thousand_rows.csv' as follows:
 
