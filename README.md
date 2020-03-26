@@ -404,7 +404,7 @@ The results of running the same code used to find the average passenger count pe
 | ---------------------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | **Average Passengers** | 32   | 26   | 18   | 15   | 11   | 9    | 15   | 31   | 36   | 35   | 36   | 38   | 43   | 37   | 41   | 39   | 31   | 39   | 50   | 49   | 54   | 49   | 45   | 42   |
 
-
+![Graph](/images/avg_passengers_subset.JPG)
 
 #image 
 
