@@ -135,7 +135,7 @@ print(dictflag)
 
 The following were the results of the dictionary, confirming that store_and_fwd_flag is Boolean type:
 
-#image 
+![Graph](/images/dictflag_results.JPG)
 
 
 
@@ -273,11 +273,12 @@ for row in reader:
 
 And here is the resulting geographic region:
 
-#image
+![Graph](/images/georange_map1.JPG)
+
 
 We note that this is a much larger geographic area than we would expect to see. Although we have constrained the coordinates to being inside of the US, this being a NYC taxi dataset we expect the geographic region of the rides to be much smaller and concentrated in NYC and the immediate surrounding areas. The large geographic range of this data suggests that there are a few outliers we need to filter out. The way I would do this would be to figure out the mean latitude and longitude and determine the distance away all the other location points were to that mean point. I would then filter out any locations which were more than three standard deviations away from the mean point. Here would be an example of the expected geographic range of the data:
 
-#image
+![Graph](/images/georange_map2.JPG)
 
 
 
@@ -313,8 +314,7 @@ Hour | 00 |01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 09 | 10 | 11 | 12 | 13 | 14 |
 **Average Passengers** | 32389 | 23430 | 17764 | 12888 | 9270 | 7840| 15742| 29414 | 36132 | 37007 | 36332 | 37645 | 39813 | 39173 | 40506 | 39001 | 32295| 40486 | 49318 | 52903 | 50865 | 49676 | 47795 | 427188
 
 
-
-#image 
+![Graph](/images/avg_passengers.JPG)
 
 
 
@@ -378,8 +378,7 @@ f2.close()
 
 The resulting file is small enough to actually open on my device, which could be very helpful in analyzing data because you are able to open the file in Notepad++ and view the raw data. 
 
-#image 
-
+![Graph](/images/every_thousand_raw_data.JPG)
 
 
 #### Again finding the average number of passengers each hour of the day but using the reduced data set. 
@@ -404,9 +403,9 @@ The results of running the same code used to find the average passenger count pe
 | ---------------------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | **Average Passengers** | 32   | 26   | 18   | 15   | 11   | 9    | 15   | 31   | 36   | 35   | 36   | 38   | 43   | 37   | 41   | 39   | 31   | 39   | 50   | 49   | 54   | 49   | 45   | 42   |
 
-![Graph](/images/avg_passengers_subset.JPG)
 
-#image 
+
+![Graph](/images/avg_passengers_subset.JPG)
 
 
 
