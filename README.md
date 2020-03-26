@@ -209,7 +209,7 @@ I was able to determine the maximum and minimum values for these numeric types u
 if n > o:
 	if n == 1:
 		minpassengers = row[7]
-			maxpassengers = row[7]
+		maxpassengers = row[7]
 ```
 
 ``` python
